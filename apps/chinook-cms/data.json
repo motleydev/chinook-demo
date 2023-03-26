@@ -1,0 +1,102 @@
+[
+  {
+    "title_id": 1,
+    "artist": "AC/DC",
+    "description": "For Those About To Rock We Salute You is a classic album by AC/DC that showcases their hard rock sound and includes hits like 'Let's Get It Up' and the title track."
+  },
+  {
+    "title_id": 2,
+    "artist": "Accept",
+    "description": "Balls to the Wall is a heavy metal classic from Accept, featuring the powerful vocals of Udo Dirkschneider and iconic tracks like 'Balls to the Wall' and 'London Leatherboys'."
+  },
+  {
+    "title_id": 3,
+    "artist": "Accept",
+    "description": "Restless and Wild is a seminal album in the history of heavy metal, with Accept's unique blend of heavy riffs and catchy melodies on full display. Standout tracks include 'Fast as a Shark' and 'Princess of the Dawn'."
+  },
+  {
+    "title_id": 4,
+    "artist": "AC/DC",
+    "description": "Let There Be Rock is a high-energy album from AC/DC, featuring classic tracks like 'Whole Lotta Rosie' and the title track. The album is a must-listen for fans of hard rock and heavy metal."
+  },
+  {
+    "title_id": 5,
+    "artist": "Aerosmith",
+    "description": "Big Ones is a compilation album from Aerosmith, featuring some of their biggest hits from the 1980s and 1990s, including 'Janie's Got a Gun' and 'Crazy'. The album is a great introduction to the band's music for new fans."
+  },
+  {
+    "title_id": 6,
+    "artist": "Alanis Morissette",
+    "description": "Jagged Little Pill is the breakthrough album from Alanis Morissette, featuring raw and emotional songs like 'You Oughta Know' and 'Ironic'. The album's impact on pop culture cannot be overstated."
+  },
+  {
+    "title_id": 7,
+    "artist": "Alice In Chains",
+    "description": "Facelift is the debut album from Alice In Chains, showcasing their unique blend of grunge, metal, and hard rock. Standout tracks include 'Man in the Box' and 'Bleed the Freak'."
+  },
+  {
+    "title_id": 8,
+    "artist": "Antônio Carlos Jobim",
+    "description": "Warner 25 Anos is a compilation album from Brazilian jazz legend Antônio Carlos Jobim, featuring some of his most iconic songs like 'Garota de Ipanema' and 'Desafinado'. The album is a must-listen for fans of bossa nova and jazz."
+  },
+  {
+    "title_id": 9,
+    "artist": "Apocalyptica",
+    "description": "Plays Metallica By Four Cellos is a unique album from Finnish cello rock band Apocalyptica, featuring instrumental covers of Metallica songs. The album's innovative approach to heavy metal has made it a cult classic."
+  },
+  {
+    "title_id": 10,
+    "artist": "Audioslave",
+    "description": "The Audioslave album is the eponymous debut studio album by American rock supergroup Audioslave, released on November 19, 2002. The album is characterized by the band's signature heavy sound and features several successful singles, including \"Cochise\" and \"Like a Stone.\""
+  },
+  {
+    "title_id": 11,
+    "artist": "Audioslave",
+    "description": "Out Of Exile by Audioslave features powerful vocals and a blend of hard rock and alternative rock."
+  },
+  {
+    "title_id": 12,
+    "artist": "BackBeat",
+    "description": "BackBeat Soundtrack is a collection of covers of classic Beatles songs performed by various artists."
+  },
+  {
+    "title_id": 13,
+    "artist": "Billy Cobham",
+    "description": "The Best Of Billy Cobham is a compilation album showcasing the legendary jazz fusion drummer's best work."
+  },
+  {
+    "title_id": 14,
+    "artist": "Black Label Society",
+    "description": "Alcohol Fueled Brewtality Live! [Disc 1] by Black Label Society captures the energy and power of their live shows."
+  },
+  {
+    "title_id": 15,
+    "artist": "Black Label Society",
+    "description": "Alcohol Fueled Brewtality Live! [Disc 2] by Black Label Society features additional live tracks from their concerts."
+  },
+  {
+    "title_id": 16,
+    "artist": "Black Sabbath",
+    "description": "Black Sabbath's self-titled debut album is a seminal work of heavy metal, featuring classics like \"Black Sabbath\" and \"N.I.B.\"."
+  },
+  {
+    "title_id": 17,
+    "artist": "Black Sabbath",
+    "description": "Black Sabbath Vol. 4 (Remaster) includes remastered versions of classics like \"Snowblind\" and \"Supernaut\"."
+  },
+  {
+    "title_id": 18,
+    "artist": "Body Count",
+    "description": "Body Count's eponymous debut album features their signature blend of heavy metal and rap, with politically charged lyrics and a hard-hitting sound."
+  },
+  {
+    "title_id": 19,
+    "artist": "Bruce Dickinson",
+    "description": "Chemical Wedding is a solo album from Iron Maiden frontman Bruce Dickinson, featuring a more experimental and progressive sound than his previous work."
+  },
+  {
+    "title_id": 20,
+    "artist": "Buddy Guy",
+    "description": "The Best Of Buddy Guy - The Millenium Collection is a compilation of the legendary blues guitarist's best work, spanning his career from the 1960s to the 1990s."
+  }
+]

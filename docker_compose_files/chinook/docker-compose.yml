@@ -1,0 +1,53 @@
+version: '3.6'
+services:
+  postgres-chinook-meta:
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgrespassword
+  postgres-chinook-playbacks:
+    image: postgres:12
+    restart: always
+    ports:
+    - "5433:5432"
+    volumes:
+    - db_data_playbacks:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgrespassword
+  postgres-chinook:
+    image: postgres:12
+    restart: always
+    volumes:
+    - db_data_default:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgrespassword
+  graphql-engine-chinook:
+    image: hasura/graphql-engine:v2.20.0
+    ports:
+    - "8080:8080"
+    depends_on:
+    - "postgres-chinook"
+    restart: always
+    volumes:
+    - ./migrations/chinook:/hasura-migrations
+    environment:
+      ## postgres database to store Hasura metadata
+      HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres-chinook-meta:5432/postgres
+      ## this env var can be used to add the above postgres database to Hasura as a data source. this can be removed/updated based on your needs
+      PG_DATABASE_URL: postgres://postgres:postgrespassword@postgres-chinook:5432/postgres
+      ALT_DATABASE_URL: postgres://postgres:postgrespassword@postgres-chinook-playbacks:5432/postgres
+      ## enable the console served by server
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
+      ## enable debugging mode. It is recommended to disable this in production
+      HASURA_GRAPHQL_DEV_MODE: "true"
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
+      ## uncomment next line to run console offline (i.e load console assets from server instead of CDN)
+      HASURA_GRAPHQL_CONSOLE_ASSETS_DIR: /srv/console-assets
+      ## uncomment next line to set an admin secret
+      ACTION_BASE_URL: "http://host.docker.internal:5555/api/chinook"
+      HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+      HASURA_GRAPHQL_UNAUTHORIZED_ROLE: anonymous
+      HASURA_GRAPHQL_JWT_SECRET: '{"type": "HS256", "key": "a-super-long-secret-that-should-really-be-changed-but-hey-this-is-a-demo"}'
+volumes:
+  db_data_default:
+  db_data_playbacks:
