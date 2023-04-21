@@ -10,11 +10,11 @@ export default function chinookStopCurrentSong(ctx: CTX) {
   const { res, user_id } = ctx;
 
   getUserDetails(user_id!, res).then((responseFromFetchedUserDetails) => {
-    const { playback_currently_playing } = responseFromFetchedUserDetails;
+    const { playbackByCurrentlyPlaying } = responseFromFetchedUserDetails;
 
-    if (playback_currently_playing) {
+    if (playbackByCurrentlyPlaying) {
       const { status, updated_at, playback_length, song, playback_id } =
-        playback_currently_playing;
+        playbackByCurrentlyPlaying;
       const { Milliseconds, TrackId } = song;
 
       // Init some basic data

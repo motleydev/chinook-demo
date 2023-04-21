@@ -10,12 +10,11 @@ export default function chinookPlayWithoutSongId(ctx: CTX) {
   const { res, user_id } = ctx;
 
   getUserDetails(user_id!, res).then((responseFromFetchedUserDetails) => {
-    const { playback_currently_playing, last_played } =
-      responseFromFetchedUserDetails;
+    const { playbackByCurrentlyPlaying } = responseFromFetchedUserDetails;
 
-    if (playback_currently_playing) {
+    if (playbackByCurrentlyPlaying) {
       const { status, updated_at, playback_length, song, playback_id } =
-        playback_currently_playing;
+        playbackByCurrentlyPlaying;
       const { Milliseconds, TrackId } = song;
 
       // Init some basic data
@@ -66,11 +65,12 @@ export default function chinookPlayWithoutSongId(ctx: CTX) {
               },
               res
             ).then((playbackResponse) => {
+              console.log(playbackResponse);
               chinookSetCurrentPreviousUserSong(
                 {
                   id: user_id,
                   current: playbackResponse.insert_playbacks_one.playback_id,
-                  previous: playback_currently_playing.playback_id,
+                  previous: playbackByCurrentlyPlaying.playback_id,
                 },
                 res
               ).then((d) => {
@@ -119,7 +119,7 @@ export default function chinookPlayWithoutSongId(ctx: CTX) {
           chinookSetCurrentPreviousUserSong(
             {
               id: user_id,
-              previous: playback_currently_playing.playback_id,
+              previous: playbackByCurrentlyPlaying.playback_id,
               current: playbackResponse.insert_playbacks_one.playback_id,
             },
             res

@@ -45,6 +45,7 @@ services:
       HASURA_GRAPHQL_CONSOLE_ASSETS_DIR: /srv/console-assets
       ## uncomment next line to set an admin secret
       ACTION_BASE_URL: "http://host.docker.internal:5555/api/chinook"
+      CMS_URL: "http://host.docker.internal:4000/graphql"
       HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
       HASURA_GRAPHQL_UNAUTHORIZED_ROLE: anonymous
       HASURA_GRAPHQL_JWT_SECRET: '{"type": "HS256", "key": "a-super-long-secret-that-should-really-be-changed-but-hey-this-is-a-demo"}'

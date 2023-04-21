@@ -26,7 +26,7 @@ type PlaybackCurrentlyPlaying = Playback;
 export type CurrentUserPlaybackState = {
   last_played: string;
   currently_playing: string;
-  playback_currently_playing: PlaybackCurrentlyPlaying;
+  playbackByCurrentlyPlaying: PlaybackCurrentlyPlaying;
 };
 
 export default (user_id: string, res: Response) => {
@@ -35,13 +35,13 @@ export default (user_id: string, res: Response) => {
       users_by_pk(id: $id) {
         last_played
         currently_playing
-        playback_currently_playing {
+        playbackByCurrentlyPlaying {
           playback_id
           playback_date
           updated_at
           status
           playback_length
-          song {
+          track_info {
             TrackId
             Milliseconds
           }
