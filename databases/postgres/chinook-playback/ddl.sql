@@ -9,9 +9,8 @@ CREATE TABLE playbacks (
   playback_date TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
   playback_length FLOAT NOT NULL DEFAULT 0,
   updated_at TIMESTAMP WITH TIME ZONE NULL DEFAULT now(),
-COLUMN status VARCHAR(50) DEFAULT 'played' NOT NULL;
-  COLUMN user_id INTEGER,
-  status VARCHAR NOT NULL DEFAULT 'played',
+  status VARCHAR(50) DEFAULT 'played' NOT NULL,
+  user_id INTEGER,
   PRIMARY KEY (playback_id)
 );
 
@@ -30,12 +29,14 @@ ADD CONSTRAINT fk_playbacks_user_id
 
 
 ALTER TABLE users
-ADD Constraint fk_users_last_played
+    ADD Constraint fk_users_last_played
     FOREIGN KEY (last_played)
     REFERENCES "playbacks" (playback_id)
     ON UPDATE CASCADE
     ON DELETE SET NULL;
-ADD CONSTRAINT fk_users_currently_playing
+
+ALTER TABLE users
+    ADD CONSTRAINT fk_users_currently_playing
     FOREIGN KEY (currently_playing)
     REFERENCES "playbacks" (playback_id)
     ON UPDATE CASCADE
@@ -54,4 +55,4 @@ CREATE TRIGGER set_timestamp
 BEFORE
 UPDATE ON playbacks
 FOR EACH ROW
-EXECUTE PROCEDURE playbacks_trigger_set_timestamp();"
+EXECUTE PROCEDURE playbacks_trigger_set_timestamp();
